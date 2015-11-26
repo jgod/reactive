@@ -11,8 +11,7 @@ namespace jgod { namespace reactive {
 #pragma mark - Types
   class Component;
   typedef std::shared_ptr<Component> SharedComponent;
-  // type ReactNodeList = ReactNode | ReactEmpty
-  typedef std::vector<SharedComponent> NodeList;
+  typedef std::vector<SharedComponent> NodeList; // ReactNode | ReactEmpty
 
   typedef jgod_nlohmann::json JSON;
   typedef JSON State;
@@ -177,10 +176,9 @@ namespace jgod { namespace reactive {
     inline void setParent(Component* const parent) {_parent = parent;}
 
   protected:
-    Props _props = JSON(); // {children: NodeList, className: string, etc.}
-    std::string _key = ""; // string | boolean | number | null
-    /** @see: https://facebook.github.io/react/docs/more-about-refs.html */
-    State _state = JSON();
+    std::string _key = ""; // string | boolean | number | null; primary key
+    Props _props = JSON(); // Use for static properties
+    State _state = JSON(); // Use for dynamic properties
     NodeList _children;
     Component *_parent = nullptr;
   };
