@@ -128,8 +128,7 @@ namespace jgod { namespace reactive {
     ////////////////////////////////////////////////////////////////////////////
 
 #pragma mark - Rendering
-    // Render functions need to be pure!
-    virtual void render(bool force = false) const = 0;
+    virtual void render(bool force = false) = 0;
 
 #pragma mark - Children
     inline void addChild(SharedComponent const component) {
