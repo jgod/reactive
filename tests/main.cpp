@@ -19,7 +19,7 @@ public:
                 reactive::NodeList children)
   : reactive::Component(type, props, children){}
   virtual ~TestComponent(){};
-  virtual void render(bool force = false) const override {}
+  virtual void render(bool force = false) override {}
 };
 
 reactive::SharedComponent createTestComponent() {
