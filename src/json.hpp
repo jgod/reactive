@@ -35,8 +35,8 @@ Class @ref nlohmann::basic_json is a good entry point for the documentation.
 @see https://github.com/nlohmann/json to download the source code
 */
 
-#ifndef JGOD_NLOHMANN_JSON_HPP
-#define JGOD_NLOHMANN_JSON_HPP
+#ifndef NLOHMANN_JSON_HPP
+#define NLOHMANN_JSON_HPP
 
 #include <algorithm>
 #include <array>
@@ -74,7 +74,7 @@ Class @ref nlohmann::basic_json is a good entry point for the documentation.
 @brief namespace for Niels Lohmann
 @see https://github.com/nlohmann
 */
-namespace jgod_nlohmann
+namespace nlohmann
 {
 
 
@@ -7247,10 +7247,10 @@ namespace std
 @brief exchanges the values of two JSON objects
 */
 template <>
-inline void swap(jgod_nlohmann::json& j1,
-                 jgod_nlohmann::json& j2) noexcept(
-                     is_nothrow_move_constructible<jgod_nlohmann::json>::value and
-                     is_nothrow_move_assignable<jgod_nlohmann::json>::value
+inline void swap(nlohmann::json& j1,
+                 nlohmann::json& j2) noexcept(
+                     is_nothrow_move_constructible<nlohmann::json>::value and
+                     is_nothrow_move_assignable<nlohmann::json>::value
                  )
 {
     j1.swap(j2);
@@ -7258,13 +7258,13 @@ inline void swap(jgod_nlohmann::json& j1,
 
 /// hash value for JSON objects
 template <>
-struct hash<jgod_nlohmann::json>
+struct hash<nlohmann::json>
 {
     /// return a hash value for a JSON object
-    std::size_t operator()(const jgod_nlohmann::json& j) const
+    std::size_t operator()(const nlohmann::json& j) const
     {
         // a naive hashing via the string representation
-        const auto& h = hash<jgod_nlohmann::json::string_t>();
+        const auto& h = hash<nlohmann::json::string_t>();
         return h(j.dump());
     }
 };
@@ -7280,9 +7280,9 @@ no parse error occurred.
 @param[in] s  a string representation of a JSON object
 @return a JSON object
 */
-inline jgod_nlohmann::json operator "" _json(const char* s, std::size_t)
+inline nlohmann::json operator "" _json(const char* s, std::size_t)
 {
-    return jgod_nlohmann::json::parse(reinterpret_cast<jgod_nlohmann::json::string_t::value_type*>
+    return nlohmann::json::parse(reinterpret_cast<nlohmann::json::string_t::value_type*>
                                  (const_cast<char*>(s)));
 }
 
