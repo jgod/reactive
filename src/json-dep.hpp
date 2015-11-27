@@ -35,8 +35,8 @@ Class @ref nlohmann::basic_json is a good entry point for the documentation.
 @see https://github.com/nlohmann/json to download the source code
 */
 
-#ifndef NLOHMANN_JSON_HPP
-#define NLOHMANN_JSON_HPP
+#ifndef JGOD_NLOHMANN_JSON_HPP
+#define JGOD_NLOHMANN_JSON_HPP
 
 #include <algorithm>
 #include <array>
