@@ -5,7 +5,7 @@
 #include <vector>
 #include <memory>
 #include <algorithm>
-#include "./json-dep.hpp"
+#include "json.hpp"
 
 namespace jgod { namespace reactive {
 #pragma mark - Types
@@ -13,7 +13,7 @@ namespace jgod { namespace reactive {
   typedef std::shared_ptr<Component> SharedComponent;
   typedef std::vector<SharedComponent> NodeList; // ReactNode | ReactEmpty
 
-  typedef jgod_nlohmann::json JSON;
+  typedef nlohmann::json JSON;
   typedef JSON State;
   typedef JSON Props;
   typedef std::function<void(const State &prevState,
