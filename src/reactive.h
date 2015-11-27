@@ -5,7 +5,7 @@
 #include <vector>
 #include <memory>
 #include <algorithm>
-#include "./json.hpp"
+#include "./json-dep.hpp"
 
 namespace jgod { namespace reactive {
 #pragma mark - Types
