@@ -139,16 +139,15 @@ namespace jgod { namespace reactive {
                              [&](const SharedComponent &c) {
         return (c && c->getKey() == component->getKey());
       });
-      if (it == _children.end()) {
+      if (it == std::end(_children)) {
         _children.push_back(component);
         component->setParent(this);
+      } else {
+        _children[it - std::begin(_children)] = component;
       }
     }
     inline void addChildren(NodeList components) {
-      for (auto &child : components) {
-        if (!child) continue;
-        addChild(child);
-      }
+      for (auto &child : components) {addChild(child);}
     }
     inline void removeChild(SharedComponent const component) {
       if (!component) return;
