@@ -1,5 +1,5 @@
-#ifndef reactive_component_h
-#define reactive_component_h
+#ifndef jgod_reactive_h
+#define jgod_reactive_h
 
 #include <string>
 #include <vector>
@@ -183,4 +183,4 @@ namespace jgod { namespace reactive {
 
   typedef std::shared_ptr<Component> SharedComponent;
 }}
-#endif /* reactive_component_h */
+#endif /* jgod_reactive_h */
