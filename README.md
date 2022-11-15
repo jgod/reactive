@@ -18,4 +18,5 @@ See `tests/main.cpp`.
 
 ## license
 
-MIT
+Copyright Justin Godesky.
+Released under the AGPLv3 License.
